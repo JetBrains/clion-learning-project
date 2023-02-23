@@ -15,6 +15,6 @@ struct Person
 
 int main()
 {
-    Person p {"Jane", "Doe", 23};
+    Person p = {"Jane", "Doe", 23};
     p.print();
 }
