@@ -3,13 +3,13 @@
 #include <algorithm>
 
 template <typename Range>
-void printRange(const Range& r)
+void print(const Range& r)
 {
     auto iter = begin(r);
     const auto iterEnd = end(r);
 
     if (iter != iterEnd)
-        std::cout << *iterEnd;
+        std::cout << *iter;
 
     while (++iter != iterEnd)
         std::cout << ", " << *iter;
@@ -18,7 +18,7 @@ void printRange(const Range& r)
 }
 
 template <typename Range>
-void bitwiseCopyRange(Range& dst, const Range& src)
+void bitwiseCopy(Range& dst, const Range& src)
 {
     const auto n = end(src) - begin(src);
     std::memmove(&dst[0], &src[0], n * sizeof(src[0]));
@@ -26,10 +26,10 @@ void bitwiseCopyRange(Range& dst, const Range& src)
 
 int main()
 {
-    std::vector<int> v = {5, 13, 1, 8, 1, 2, 1, 3};
-    printRange(v);
+    std::vector<int> v = {1, 1, 2, 3, 5, 8, 13};
+    print(v);
 
     std::vector<int> w(v.size());
-    bitwiseCopyRange(w, v);
-    printRange(w);
+    bitwiseCopy(w, v);
+    print(w);
 }

@@ -3,13 +3,13 @@
 #include <algorithm>
 
 template <typename Range>
-void printRange(const Range &r, const char *separator)
+void print(const Range &r, const char *separator)
 {
     auto iter = begin(r);
     const auto iterEnd = end(r);
 
     if (iter != iterEnd)
-        std::cout << *iterEnd;
+        std::cout << *iter;
 
     while (++iter != iterEnd)
         std::cout << separator << *iter;
@@ -17,16 +17,14 @@ void printRange(const Range &r, const char *separator)
     std::cout << '\n';
 }
 
-template <typename Range>
-void sortRange(Range& r)
+void sort(std::vector<int>& v)
 {
-    using std::swap;
-    const auto n = end(r) - begin(r);
+    for (size_t i = 0; i < v.size() - 1; ++i) {
+        for (size_t j = 0; j < v.size() - i - 1; ++j) {
+            using std::swap;
+            int& a = v[j + 1];
+            int& b = v[j];
 
-    for (size_t i = 0; i < n - 1; ++i) {
-        for (size_t j = 0; j < n - i - 1; ++j) {
-            auto& a = r[j + 1];
-            auto& b = r[j];
             if (a < b)
                 swap(a, b);
         }
@@ -34,7 +32,7 @@ void sortRange(Range& r)
 }
 int main()
 {
-    std::vector<int> v = {5, 13, 1, 8, 1, 2, 1, 3};
-    sortRange(v);
-    printRange(v, ", ");
+    std::vector<int> v = {5, 13, 1, 8, 2, 1, 3};
+    sort(v);
+    print(v, ", ");
 }
