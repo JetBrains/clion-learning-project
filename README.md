@@ -1,7 +1,7 @@
 
 ### Meet the Interactive Feature Trainer
 
-This interactive course will guide you through a lot of IDE workflows and use cases. It comes with many helpful action shortcuts. You don't need to memorize all of them. Instead, try them and take into your service the most useful ones. Since during your everyday work, you might encounter new problems, revisit this course and give other features a second try. Stay tuned for new lessons helping you to be more productive with IntelliJ IDEA.
+This interactive course will guide you through a lot of IDE workflows and use cases. It comes with many helpful action shortcuts. You don't need to memorize all of them. Instead, try them and take into your service the most useful ones. Since during your everyday work, you might encounter new problems, revisit this course and give other features a second try. Stay tuned for new lessons helping you to be more productive with CLion.
 
 ##### How to use the course
 
